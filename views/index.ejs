@@ -1,1 +1,21 @@
-<h1>Hello world</h1>
+<div class="author">
+    <h1 class="author__heading">Hi, I amd Damian.</h1>
+    <p class="author__body">Security enthusiast, jack of all trades master of none</p>
+</div>
+
+<img src="/img/hero-image.webp" alt="person looking at the window" class="hero-image" width="981" height="528">
+
+<section class="articles">
+    <h2 class="articles__heading">Latest Posts</h2>
+    <ul class="article-ul">
+        <% data.forEach(post => { %>
+            <li>
+                <a href="/post/<%= post._id %>">
+                    <span><%= post.title %></span>
+                    <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+                </a>
+            </li>
+        <% }) %>
+    </ul>
+    <a href="#" class="pagination">&lt View older Posts &gt</a>
+</section>
