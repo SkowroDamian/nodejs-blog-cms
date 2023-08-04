@@ -11,6 +11,9 @@ const PORT = 5005 || process.env.PORT;
 //connect to db test
 connectDB();
 
+app.use(express.urlencoded({ extend: true }));
+app.use(express.json());
+
 app.use(express.static('public'));
 
 // templating engine
